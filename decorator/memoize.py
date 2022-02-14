@@ -7,7 +7,7 @@ def memoize(f):
 
     return helper
 
-
+@memoize
 def f(x):
     if x == 0:
         return 0
@@ -16,6 +16,5 @@ def f(x):
     else:
         return f(x-1) + f(x-2)
 
-
-fib = memoize(f)
-print(fib(40))
+for i in range(2, 20):
+    print('For i = %s, the result is %s' %(i,f(i)))
